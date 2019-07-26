@@ -19,7 +19,7 @@ class ShowMore extends Component {
     }
 
     state = {
-        expanded: false,
+        expanded: true,
         truncated: false
     }
 
