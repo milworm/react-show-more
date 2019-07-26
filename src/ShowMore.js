@@ -7,7 +7,8 @@ class ShowMore extends Component {
         lines: 3,
         more: 'Show more',
         less: 'Show less',
-        anchorClass: ''
+        anchorClass: '',
+        expanded: false
     }
 
     static propTypes = {
@@ -15,12 +16,16 @@ class ShowMore extends Component {
         lines: PropTypes.number,
         more: PropTypes.node,
         less: PropTypes.node,
-        anchorClass: PropTypes.string
+        anchorClass: PropTypes.string,
+        expanded: PropTypes.boolean
     }
 
-    state = {
-        expanded: true,
-        truncated: false
+    constructor(props) {
+        super(props)
+        this.state = {
+            expanded: props.expanded,
+            truncated: false
+        }
     }
 
     handleTruncate = truncated => {
